@@ -1,9 +1,12 @@
 *** netttols ***
-add this lines to:
+
+Add this lines to:
 
 ```
 vim .bashrc
 ```
+
+Just append:
 
 ```
 alias macvendor="sh nettools/macvendor/macvendor.sh"
