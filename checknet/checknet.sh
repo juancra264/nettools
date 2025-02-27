@@ -1,4 +1,11 @@
 #!/bin/bash
+## Set some Colors
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+blue=$(tput setaf 4)
+magenta=$(tput setaf 5)
+cyan=$(tput setaf 6)
+reset=$(tput sgr0)
 
 echo "*************************************************************************"
 echo "IP Configured"
@@ -25,9 +32,9 @@ echo "DNS Test to Cloudflare DNS 1.1.1.1."
 output=$(dig @1.1.1.1 www.google.com | grep status)
 # Use the if statement to check the output
 if echo "$output" | grep -q "NOERROR"; then
-    echo "DNS response OK"
+    echo "DNS response ${green}OK${reset}"
 else
-    echo "DNS response FAIL"
+    echo "DNS response ${red}FAIL${reset}"
 fi
 
 echo "*************************************************************************"
@@ -35,9 +42,9 @@ echo "DNS Test to Google DNS"
 output=$(dig @8.8.8.8 www.google.com | grep status)
 # Use the if statement to check the output
 if echo "$output" | grep -q "NOERROR"; then
-    echo "DNS response OK"
+    echo "DNS response ${green}OK${reset}"
 else
-    echo "DNS response FAIL"
+    echo "DNS response ${red}FAIL${reset}"
 fi
 
 echo "*************************************************************************"
@@ -45,16 +52,16 @@ echo "DNS Test to Mimecast DNS"
 output=$(dig @41.74.203.10 www.google.com | grep status)
 # Use the if statement to check the output
 if echo "$output" | grep -q "NOERROR"; then
-    echo "DNS response OK"
+    echo "DNS response ${green}OK${reset}"
 else
-    echo "DNS response FAIL"
+    echo "DNS response ${red}FAIL${reset}"
 fi
 output=$(dig @41.74.203.11 www.google.com | grep status)
 # Use the if statement to check the output
 if echo "$output" | grep -q "NOERROR"; then
-    echo "DNS response OK"
+    echo "DNS response ${green}OK${reset}"
 else
-    echo "DNS response FAIL"
+    echo "DNS response ${red}FAIL${reset}"
 fi
 
 echo "*****************************************************************************"
