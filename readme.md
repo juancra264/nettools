@@ -1,4 +1,4 @@
-*** netttols ***
+### nettools
 
 Add this lines to:
 
@@ -12,4 +12,5 @@ Just append:
 alias macvendor="sh nettools/macvendor/macvendor.sh"
 alias macadd="sh nettools/macadd/macadd.sh"
 alias checknet="sh nettools/checknet/checknet.sh"
+alias ipaddinfo="sh nettools/ipaddinfo/ipaddinfo.sh"
 ```
