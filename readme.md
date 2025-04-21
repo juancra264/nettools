@@ -14,5 +14,3 @@ alias macadd="sh nettools/macadd/macadd.sh"
 alias checknet="sh nettools/checknet/checknet.sh"
 alias ipaddinfo="sh nettools/ipaddinfo/ipaddinfo.sh"
 ```
-
-testing changes in github editor.
