@@ -43,7 +43,7 @@ def ping(host):
     the ping OS package.
     """
     # Ping parameters as function of OS
-    cmd = subprocess.run(["ping", host, "-c 1"],
+    cmd = subprocess.run(["ping", host, "-c 1", "-W 1"],
                          stdout=subprocess.PIPE,
                          stderr=subprocess.STDOUT)
     output = cmd.stdout.decode("utf-8").strip()
