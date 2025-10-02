@@ -47,7 +47,7 @@ def ping(host):
                          stdout=subprocess.PIPE,
                          stderr=subprocess.STDOUT)
     output = cmd.stdout.decode("utf-8").strip()
-    if "time" in output:
+    if "icmp_seq" in output:
         return("UP")
     else:
         return("DOWN")
