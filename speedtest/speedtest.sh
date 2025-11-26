@@ -42,7 +42,7 @@ speedtest(){
   # File to store results
   RESULTS_FILE="speedtest_results.txt"
   # get hostname
-  host=hostname
+  host=$(hostname)
   # Run Speedtest and save output to file
   speedtest-cli --simple > "$RESULTS_FILE"
   # Read results into an array using mapfile
