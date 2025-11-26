@@ -41,13 +41,15 @@ EOF
 speedtest(){
   # File to store results
   RESULTS_FILE="speedtest_results.txt"
+  # get hostname
+  host=hostname
   # Run Speedtest and save output to file
   speedtest-cli --simple > "$RESULTS_FILE"
   # Read results into an array using mapfile
   mapfile -t results < "$RESULTS_FILE"
   # Extract and display specific metrics
-  echo "Speed Test Results:\n Ping: ${results[0]} \n Download: ${results[1]} \n Upload: ${results[2]}"
-  send_discord_msg "Speed Test Results:\n Ping: ${results[0]} \n Download: ${results[1]} \n Upload: ${results[2]}" 
+  echo "$host Speed Test Results:\n Ping: ${results[0]} \n Download: ${results[1]} \n Upload: ${results[2]}"
+  send_discord_msg "$host Speed Test Results:\n Ping: ${results[0]} \n Download: ${results[1]} \n Upload: ${results[2]}" 
   rm -rf $RESULTS_FILE
 }
 
@@ -55,11 +57,11 @@ speedtest(){
 # The main function
 # #############################################################################
 f_main() {
-  date_hour=$(date +"%Y%m%d_%H%M%S")
-  send_discord_msg "$date_hour - Speedtest Started"
+  #date_hour=$(date +"%Y%m%d_%H%M%S")
+  #send_discord_msg "$date_hour - Speedtest Started"
   speedtest
-  date_hour=$(date +"%Y%m%d_%H%M%S")
-  send_discord_msg "$date_hour - Speedtest Done"
+  #date_hour=$(date +"%Y%m%d_%H%M%S")
+  #send_discord_msg "$date_hour - Speedtest Done"
 }
 
 # Call the main function.
