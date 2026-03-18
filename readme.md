@@ -14,4 +14,5 @@ alias macadd="bash ~/nettools/macadd/macadd.sh"
 alias checknet="bash ~/nettools/checknet/checknet.sh"
 alias ipaddinfo="bash ~/nettools/ipaddinfo/ipaddinfo.sh"
 alias pingmon="python ~/nettools/pingmon/pingmon.py"
+alias where="bash ~/nettools/where/where.sh"
 ```
